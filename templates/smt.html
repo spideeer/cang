@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格标记</title>
+    <style>
+        div { background-color: #00a7df;
+            text-align:center;}
+        table { border-collapse: collapse;}
+        table,table tr th, table tr td { border:1px solid #000000; }
+    </style>
+</head>
+<body>
+
+
+<table  align="center" >
+    <caption> 仓库管理系统 </caption>
+    欢迎{{ user.user_name }}
+<div id="cartree" class="cartree" >
+    <a href="home/persional">个人中心</a>
+    <a href="home/create/new">添加新商品</a>
+    <a href="">添加新属性</a>
+    <a href=""></a>
+    <a href=""></a>
+</div>
+    <tr>
+        <th align="center" valign="middle">商品编号</th>
+        <th align="center" valign="middle">商品名称</th>
+        <th align="center" valign="middle">数量</th>
+        <th align="center" valign="middle">进价</th>
+        <th align="center" valign="middle">零售价</th>
+    </tr>
+
+    {% for cargo in cargo_list %}
+        <tr>
+
+            <td align="center" valign="middle">{{ cargo.cargo_ID }}</td>
+            <td align="center" valign="middle">{{ cargo.cargo_name }}</td>
+            <td align="center" valign="middle">{{ cargo.amount }}</td>
+            <td align="center" valign="middle">{{ cargo.in_price }}</td>
+            <td align="center" valign="middle">{{ cargo.out_price}}</td>
+        </tr>
+    {% endfor %}
+{#    <tr>#}
+{#        <td align="center" valign="middle">李四</td>#}
+{#        <td align="center" valign="middle">93</td>#}
+{#        <td align="center" valign="middle">86</td>#}
+{#        <td align="center" valign="middle">80</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#        <td align="center" valign="middle">王五</td>#}
+{#        <td align="center" valign="middle">85</td>#}
+{#        <td align="center" valign="middle">86</td>#}
+{#        <td align="center" valign="middle">90</td>#}
+{#    </tr>#}
+
+</table>
+</body>
